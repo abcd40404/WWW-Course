@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>WWW Homework 1</title>
+        <style>
+            body{
+                margin: 0;
+            }
+            header{
+                display: flex;
+                justify-content: space-between;
+                height: 55px;
+                background-color: #272727;
+                color: #FFF;
+            }
+            header .menu{
+                display: flex;
+                cursor: pointer;
+                /* 為了不要擋住 table */
+                z-index: 1;
+            }
+            header .menu div{
+                width: 80px;
+            }
+            header .col{
+                margin-right: 5px;
+                margin-left: 5px;
+            }
+            header .menu .col .title:hover{
+                background-color: #00A600;
+            }
+            header .menu .col ul{
+                display: none;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+            header .menu .col:hover ul{
+                display: block;
+            }
+            header .menu .col .title {
+                display: flex;
+                /* 置中 */
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+            }
+            header .menu .col li{
+                display: flex;
+                background-color: #22242D;
+                justify-content: center;
+                align-items: center;
+                height: 40px;
+            }
+            header .menu .col-A li:hover{
+                transform: scale(1.2);
+                background-color: #FF60AF;
+            }
+            header .menu .col-B li:hover{
+                transform: translateX(-20px);
+                background-color: #7B7B7B;
+            }
+            header .menu .col-C li:hover{
+                transform: rotate(-15deg);
+                background-color: #EA7500;
+            }
+            header .menu .col-D li:hover{
+                transform: skewX(30deg);
+                background-color: #2828FF;
+            }
+            /* social_link */
+            header .social_link img{
+                height: 50px;
+                transition-duration: 1s;
+                margin-top: 3px;
+            }
+            header .social_link img:hover{
+                border: 5px solid;
+                border-color: red;
+                border-radius: 10px;
+            }
+            header .social_link .facebook img:hover{
+                transform: scale(1.5);
+            }
+            header .social_link .twitter img:hover{
+                transform: scaleX(1.5);
+            }
+            header .social_link .linkedin img:hover{
+                transform: rotate(180deg);
+            }
+            /* main */
+            main{
+                margin: 0;
+                padding: 0;
+                display: flex;
+                /* 置中以col對齊 */
+                flex-direction: column;
+                align-items: center;
+            }
+            main table{
+                /* 表格框線相接 */
+                border-collapse:collapse;
+                box-shadow: 5px 5px 3px rgba(20%, 20%, 40%, 1);
+                margin: 15px;
+            }
+            main thead{
+                background-color: #8600FF;
+            }
+            main table th, td{
+                border: 1px solid;
+                vertical-align: top;
+            }
+            main table tbody tr td:nth-child(1){
+                background: #EAC100;
+            }
+            main table tbody tr td:nth-child(2):hover{
+                background: #79FF79;
+            }
+            main img{
+                max-width: 300px;
+                transition-duration: 1s;
+            }
+            main img.hima:hover{
+                transform: translateX(30px);
+            }
+            main img.uc:hover{
+                transform: translateY(-30px);
+            }
+            /* footer */
+            footer{
+                background-color: #7B7B7B;
+                height: 25px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class = "menu">
+                <div class = "col col-A">
+                    <span class = "title">Block_A</span>
+                    <ul>
+                        <li><span>A-1</span></li>
+                        <li><span>A-2</span></li>
+                        <li><span>A-3</span></li>
+                    </ul>
+                </div>
+                <div class = "col col-B">
+                    <span class = "title">Block_B</span>
+                    <ul>
+                        <li><span>B-1</span></li>
+                        <li><span>B-2</span></li>
+                        <li><span>B-3</span></li>
+                    </ul>
+                </div>
+                <div class = "col col-C">
+                    <span class = "title">Block_C</span>
+                    <ul>
+                        <li><span>C-1</span></li>
+                        <li><span>C-2</span></li>
+                        <li><span>C-3</span></li>
+                    </ul>
+                </div>
+                <div class = "col col-D">
+                    <span class = "title">Block_D</span>
+                    <ul>
+                        <li><span>D-1</span></li>
+                        <li><span>D-2</span></li>
+                        <li><span>D-3</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class = "social_link">
+                <a href="https://www.facebook.com" class="facebook">
+                    <img src="./img/fb_icon.png" alt="facebook">
+                </a>
+
+                <a href="https://twitter.com" class="twitter">
+                    <img src="./img/twitter_icon.png" alt="twitter">
+                </a>
+
+                <a href="https://www.linkedin.com" class="linkedin">
+                    <img src="./img/linkin_icon.png" alt="linkedin">
+                </a>
+            </div>
+        </header>
+        <main class = "container">
+            <table>
+                <thead>
+                    <tr><th colspan="3">好友資料</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>姓名</td>
+                        <td>海馬瀨人</td>
+                        <td rowspan="4">
+                            <img src = "./img/man1.png" class = "hima">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>性別</td>
+                        <td>男</td>
+                    </tr>
+                    <tr>
+                        <td>學號</td>
+                        <td>052720411</td>
+                    </tr>
+                    <tr>
+                        <td>興趣</td>
+                        <td>決鬥</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                    <tr><th colspan="3">好友資料</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>姓名</td>
+                        <td>亞圖姆</td>
+                        <td rowspan="4">
+                            <img src = "./img/man2.png" class = "uc">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>性別</td>
+                        <td>男</td>
+                    </tr>
+                    <tr>
+                        <td>學號</td>
+                        <td>052720547</td>
+                    </tr>
+                    <tr>
+                        <td>興趣</td>
+                        <td>決鬥</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+        <footer>
+            <marquee direction="right" behavior="alternate">
+                林秉辭
+                <a href = "mailto:abcd40404@gmail.com">abcd40404@gmail.com</a>
+            </marquee>
+        </footer>
+    </body>
+</html>
